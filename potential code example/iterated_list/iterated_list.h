@@ -26,19 +26,17 @@ public:
         }
 
         Iterator(node<T> *p = nullptr): _ptr(p) {    // ctor
-            // PUPOSELY LEFT BLANK
+            // PURPOSELY LEFT BLANK
         }
 
         T& operator *() {   // dereference operator
             return _ptr->_item;
-
         }
 
 
         const T& operator *() const {   // dereference operator
            assert(_ptr != nullptr);
            return _ptr->_item;
-
         }
 
         T* operator ->() {
@@ -157,6 +155,9 @@ typename Simple_List<T>::Iterator Simple_List<T>::InsertAfter(T i,
 template <typename T>
 typename Simple_List<T>::Iterator Simple_List<T>::InsertBefore(T i,
                                                          Iterator iMarker) {
+    if (_head_ptr == iMarker._ptr)
+        InsertHead(i);
+    else
     // insert i before iMarker
     return Iterator(insert_before(_head_ptr, iMarker._ptr, i));
 }
@@ -248,7 +249,7 @@ bool Simple_List<T>::Empty() {
 
 template <typename U>
 ostream& operator <<(ostream& outs, const Simple_List<U>& l) {
-    return print_plain_list(l._head_ptr);
+    return print_list(l._head_ptr);
 }
 
 #endif // ITERATED_LIST_H
