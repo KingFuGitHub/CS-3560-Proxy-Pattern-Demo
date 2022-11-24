@@ -1,0 +1,2 @@
+Iterated list uses the Iterator class as a proxy to access elements of the Simple List object. Users do not directly access the list, but instead use an Iterator object
+to add elements and move along the list.
