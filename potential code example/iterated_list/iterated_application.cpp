@@ -7,6 +7,7 @@ using namespace std;
 void menu(char command, Simple_List<int>& l,
           Simple_List<int>::Iterator &cursor) {
     int key;
+    Simple_List<int>::Iterator temp;
     switch(command) {
     case 'R':
         cursor = l.InsertAfter(rand() % 100, cursor);
@@ -35,7 +36,9 @@ void menu(char command, Simple_List<int>& l,
         cout << "key: ";
         cin >> key;
         cout << endl;
-        cursor = l.Search(key);
+        temp = l.Search(key);
+        if (temp != nullptr)
+            cursor = l.Search(key);
      break;
 
     case 'P':
@@ -43,7 +46,7 @@ void menu(char command, Simple_List<int>& l,
      break;
 
     case 'N':
-            cursor = l.Next(cursor);
+        cursor = l.Next(cursor);
      break;
 
     case 'H':
