@@ -254,7 +254,7 @@ node<T>* last_node(node<T>* head) {         //last node in the list
         after = after->_next;
         before = before->_next;
     }
-    return after;
+    return before;
 }
 
 template <typename T>
