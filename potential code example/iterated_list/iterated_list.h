@@ -156,10 +156,10 @@ template <typename T>
 typename Simple_List<T>::Iterator Simple_List<T>::InsertBefore(T i,
                                                          Iterator iMarker) {
     if (_head_ptr == iMarker._ptr)
-        InsertHead(i);
+        return InsertHead(i);
     else
-    // insert i before iMarker
-    return Iterator(insert_before(_head_ptr, iMarker._ptr, i));
+        // insert i before iMarker
+        return Iterator(insert_before(_head_ptr, iMarker._ptr, i));
 }
 
 template <typename T>
