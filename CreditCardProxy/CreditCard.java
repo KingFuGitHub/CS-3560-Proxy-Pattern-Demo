@@ -3,7 +3,11 @@ package CreditCardProxy;
 //CreditCard "implements" the Payment interface
 public class CreditCard implements Payment
 {
- private final Payment paymentMethod = new Cash();
+	private Payment paymentMethod;
+    
+    public CreditCard(Payment cashPayment) {
+        paymentMethod = cashPayment;
+    }
  
  /*
  * This method validates the customer's credit card access.

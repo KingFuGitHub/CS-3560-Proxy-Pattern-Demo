@@ -4,7 +4,7 @@ public class ClientDriver {
 	public static void main(String[] args) {
 		//Initializes Payment Options
 		Payment paymentMethod1 = new Cash();
-		Payment paymentMethod2 = new CreditCard();
+		Payment paymentMethod2 = new CreditCard(paymentMethod1);
 		
 		//Making Cash Payments
 		System.out.println("\nCash Payments");
